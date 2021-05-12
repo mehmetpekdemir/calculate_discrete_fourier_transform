@@ -8,7 +8,7 @@ AudioFile<double> load_audio_file();
 void print_audio_file_summary(AudioFile<double> audioFile);
 vector<double> get_signal(AudioFile<double> audioFile);
 int get_num_samples_per_channel(AudioFile<double> audioFile);
-void calculate_discrete_fourier_transform();
+void calculate_discrete_fourier_transform(int num_samples_per_channel, vector<double> signal);
 
 int main()
 {
@@ -44,7 +44,8 @@ int main()
 AudioFile<double> load_audio_file()
 {
     AudioFile<double> audioFile;
-    audioFile.load("/home/mehmet/Workspace/DFT/track.wav"); // try catch
+    audioFile = audioFile.load("/home/mehmet/Workspace/DFT/track.wav");
+    return audioFile;
 }
 
 void print_audio_file_summary(AudioFile<double> audioFile)
